@@ -13,14 +13,21 @@ export function day2(): number {
         .reduce((previousValue, currentValue) => previousValue +currentValue, 0)
 }
 
-export function day2_part2(): void {
+export function day2_part2(): number {
+    let fullyQualifiedFileName = join(__dirname, 'day2.txt');
+    const parser = new ElfGameParser();
+    const checker = new ElfGamePossibilityChecker();
+    return readFileLines(fullyQualifiedFileName)
+        .map(line => parser.parse(line))
+        .map(elfGame => elfGame.highestRed * elfGame.highestGreen * elfGame.highestBlue)
+        .reduce((previousValue, currentValue) => previousValue +currentValue, 0)
 }
 
 class ElfGame {
     id: number = 0
-    highestGreen: Number = 0
-    highestBlue: Number = 0
-    highestRed: Number = 0
+    highestGreen: number = 0
+    highestBlue: number = 0
+    highestRed: number = 0
 }
 
 export class ElfGameParser {

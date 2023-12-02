@@ -6,6 +6,6 @@ describe('calibration detector', () => {
     });
 
     it('run day1 - part 2', () => {
-        day2_part2();
+        console.log(day2_part2())
     });
 });
