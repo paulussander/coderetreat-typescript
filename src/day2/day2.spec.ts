@@ -5,7 +5,7 @@ describe('calibration detector', () => {
         console.log(day2())
     });
 
-    it('run day1 - part 2', () => {
+    it('run day2 - part 2', () => {
         console.log(day2_part2())
     });
 });
